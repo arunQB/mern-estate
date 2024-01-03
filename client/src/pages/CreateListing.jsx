@@ -7,7 +7,7 @@ import {useNavigate} from 'react-router-dom';
 export default function CreateListing() {
   const {currentUser} = useSelector(state => state.user);
   const navigate = useNavigate();
-  //console.log(currentUser.username);
+ 
   const [files, setFiles] = useState([]);
   const [formData, setFormData] = useState({
       imageUrls:[],
@@ -29,7 +29,6 @@ export default function CreateListing() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  //console.log(formData);
   const handleImageSubmit = (e) => {
     if (files.length > 0 
       && files.length + formData.imageUrls.length < 7) {
@@ -250,11 +249,11 @@ export default function CreateListing() {
             { formData.offer && (
               <div className='flex items-center gap-2'>
                 <input type="number" id='discountPrice' min='0' 
-                max='1000'
+                max='100000'
                 required
                 onChange={handleChange}
                 value={formData.discountPrice} 
-                className='p-3 broder border-gray-300 
+                className='p-3 border border-gray-300 
                 rounded-lg' 
                 />
                 <div className='flex flex-col items-center'>
