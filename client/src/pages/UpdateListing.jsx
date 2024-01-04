@@ -262,7 +262,7 @@ export default function CreateListing() {
             { formData.offer && (
               <div className='flex items-center gap-2'>
                 <input type="number" id='discountPrice' min='0' 
-                max='1000'
+                max='200000'
                 required
                 onChange={handleChange}
                 value={formData.discountPrice} 
